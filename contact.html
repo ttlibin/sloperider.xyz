@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Contact Us | sloperider.xyz</title>
+  <meta name="description" content="Contact the Slope Rider team for support, feedback, or partnership inquiries." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://sloperider.xyz/contact.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Slope Rider" />
+  <meta property="og:title" content="Contact Us | sloperider.xyz" />
+  <meta property="og:description" content="Get in touch for support, feedback, or partnership opportunities." />
+  <meta property="og:url" content="https://sloperider.xyz/contact.html" />
+  <meta property="og:image" content="https://sloperider.xyz/images/111.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact Slope Rider" />
+  <meta name="twitter:description" content="Reach the Slope Rider team for support and feedback." />
+  <meta name="twitter:image" content="https://sloperider.xyz/images/111.png" />
+  <link rel="stylesheet" href="style-nordic.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180" />
+</head>
+<body class="theme-nordic">
+  <header>
+    <nav class="container nav">
+      <div class="brand">
+        <span class="brand-badge"></span>
+        <span>Slope Rider</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="container">
+      <h1>Contact Us</h1>
+      <p>Have a question, a suggestion, or need support? The Slope Rider team is always happy to help and hear from our players.</p>
+      <h2>Email</h2>
+      <p><a href="mailto:support@sloperider.xyz">support@sloperider.xyz</a></p>
+      <h2>Feedback</h2>
+      <form id="contactForm" autocomplete="off">
+        <label for="message">Your message:</label><br>
+        <textarea id="message" name="message" rows="5" placeholder="Type your feedback here..." style="width:100%;"></textarea><br>
+        <button class="btn-primary" type="submit" id="submitBtn">Send</button>
+      </form>
+      <div id="formAlert" style="color: var(--accent); font-weight:600; margin-bottom:12px;"></div>
+      <h2>Social Media</h2>
+      <p>Follow us on Twitter, Discord, and YouTube (coming soon).</p>
+    </section>
+  </main>
+  <footer>
+    <div class="container">&copy; <span id="y"></span> sloperider.xyz</div>
+  </footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();
+  // 表单简易校验+反馈
+  const form=document.getElementById('contactForm'), msg=document.getElementById('message'), btn=document.getElementById('submitBtn'), alert=document.getElementById('formAlert');
+  form.onsubmit=function(e){
+    e.preventDefault();
+    btn.disabled=true;
+    if(msg.value.trim().length<3){
+      alert.textContent='Please enter your message (at least 3 characters).';
+      btn.disabled=false;
+      msg.focus();
+      return false;
+    }
+    alert.textContent='Thank you for your feedback!';
+    msg.value='';
+    setTimeout(()=>{alert.textContent='';btn.disabled=false;},1800);
+    return false;
+  }
+  </script>
+</body>
+</html>
