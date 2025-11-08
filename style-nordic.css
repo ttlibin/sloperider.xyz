@@ -253,6 +253,15 @@ footer {
   font-size: 1.01em !important; 
   background: none !important;
 }
+footer a {
+  color: var(--muted) !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px !important;
+  transition: color 0.2s !important;
+}
+footer a:hover {
+  color: var(--btn) !important;
+}
 
 /* 卡片内输入和表单优化 */
 form textarea, form input[type=text] {
